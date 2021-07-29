@@ -90,3 +90,36 @@ while index < first_array.length
   end
   index += 1
 end
+
+# 7. Use a nested loop with an array of numbers to compute an array with every combination of products from each number.
+numbers = [2, 8, 3]
+combinations = []
+index = 0
+while index < numbers.length
+  first_number = numbers[index]
+  second_index = 0
+  while second_index < numbers.length
+    second_number = numbers[second_index]
+    combinations << first_number * second_number
+    second_index += 1
+  end
+  index += 1
+end
+
+#  8. Use a nested loop to find the largest sum of any two different numbers within an array.
+numbers = [1, 8, 3, 10]
+largest_sum = numbers[0] + numbers[1]
+index = 0
+while index < numbers.length
+  second_index = 0
+  while second_index < numbers.length
+    if index != second_index
+      sum = numbers[index] + numbers[second_index]
+      if sum > largest_sum
+        largest_sum = sum
+      end
+    end
+    second_index += 1
+  end
+  index += 1
+end
