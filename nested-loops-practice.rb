@@ -123,3 +123,23 @@ while index < numbers.length
   end
   index += 1
 end
+
+#  9. Use nested loops with an array of numbers to compute a new array containing the first two numbers (from the original array) that add up to the number 10. If there are no two numbers that add up to 10, return false.
+numbers = [2, 5, 3, 1, 0, 7, 11]
+result = false
+index = 0
+while index < numbers.length
+  current = numbers.length
+  second_index = 0
+  while second_index < numbers.length
+    if index != second_index
+      other = numbers[second_index]
+      if current + other == 10 && result == false
+        result = [current, other]
+      end
+    end
+    second_index += 1
+  end
+  index += 1
+end
+p result
